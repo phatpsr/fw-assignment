@@ -1,6 +1,6 @@
 # Assignment 
 ## A. Test cases
-1. Authorization & User - Please find in test scripts file
+1. Authorization & User - Please find in test scripts folder `Authentication_and_user`
 2. Search - Please find in file `FW-Assignment.xlsx`
    
 ## B. Automated test scripts
