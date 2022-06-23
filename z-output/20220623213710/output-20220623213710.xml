@@ -1,0 +1,2031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.3 on win32)" generated="20220623 21:37:10.503" rpa="false" schemaversion="3">
+<suite id="s1" name="Authentication_and_user" source="D:\Projects\fw-assignment\Authentication_and_user">
+<kw name="I Open Browser &amp; Go To Application" library="keyword" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220623 21:37:11.196" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\Projects\\fw-assignment\\z-output\\20220623213710\\browser\\traces\\52e3d860-b86d-4213-9958-9fc7fe3a72e8"}</msg>
+<msg timestamp="20220623 21:37:11.485" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\Projects\\fw-assignment\\z-output\\20220623213710\\browser\\traces\\52e3d860-b86d-4213-9958-9fc7fe3a72e8"}</msg>
+<status status="PASS" starttime="20220623 21:37:11.196" endtime="20220623 21:37:11.485"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>10s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20220623 21:37:11.489" level="INFO">No context open.</msg>
+<status status="PASS" starttime="20220623 21:37:11.485" endtime="20220623 21:37:11.490"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220623 21:37:11.491" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220623 21:37:11.509" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220623 21:37:11.509" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220623 21:37:11.490" endtime="20220623 21:37:11.509"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:11.196" endtime="20220623 21:37:11.509"/>
+</kw>
+<suite id="s1-s1" name="C001 Signup by filling info" source="D:\Projects\fw-assignment\Authentication_and_user\C001_Signup_by_filling_info.robot">
+<test id="s1-s1-t1" name="Signup by Filling Every Fields" line="10">
+<kw name="I Go To Login Page" library="keyword" type="SETUP">
+<kw name="I Generate Unique Number" library="keyword">
+<var>${unique_no}</var>
+<kw name="Get Current Date" library="DateTime">
+<var>${unique_no}</var>
+<arg>time_zone=local</arg>
+<arg>result_format=%y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220623 21:37:11.521" level="INFO">${unique_no} = 220623213711</msg>
+<status status="PASS" starttime="20220623 21:37:11.521" endtime="20220623 21:37:11.521"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${unique_no}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:37:11.521" level="INFO">${unique_no} = 220623213711</msg>
+<status status="PASS" starttime="20220623 21:37:11.521" endtime="20220623 21:37:11.521"/>
+</kw>
+<msg timestamp="20220623 21:37:11.522" level="INFO">${unique_no} = 220623213711</msg>
+<status status="PASS" starttime="20220623 21:37:11.520" endtime="20220623 21:37:11.522"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${gen_email}==True</arg>
+<arg>I Generate Email</arg>
+<arg>uatfw${unique_no}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="I Generate Email" library="keyword">
+<arg>uatfw${unique_no}</arg>
+<kw name="I Generate Unique Number" library="keyword">
+<kw name="Get Current Date" library="DateTime">
+<var>${unique_no}</var>
+<arg>time_zone=local</arg>
+<arg>result_format=%y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220623 21:37:11.523" level="INFO">${unique_no} = 220623213711</msg>
+<status status="PASS" starttime="20220623 21:37:11.523" endtime="20220623 21:37:11.523"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${unique_no}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:37:11.523" level="INFO">${unique_no} = 220623213711</msg>
+<status status="PASS" starttime="20220623 21:37:11.523" endtime="20220623 21:37:11.523"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:11.522" endtime="20220623 21:37:11.523"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${change_btn}</var>
+<arg>//button//span[contains(text(),'change')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:11.524" level="INFO">${change_btn} = //button//span[contains(text(),'change')]</msg>
+<status status="PASS" starttime="20220623 21:37:11.523" endtime="20220623 21:37:11.524"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${get_it_btn}</var>
+<arg>//button[contains(text(),'Get it!')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:11.524" level="INFO">${get_it_btn} = //button[contains(text(),'Get it!')]</msg>
+<status status="PASS" starttime="20220623 21:37:11.524" endtime="20220623 21:37:11.524"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${cookie_warning_close}</var>
+<arg>//*[@class='cookie-warning active']//*[@class="cookie-warning__close"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:11.524" level="INFO">${cookie_warning_close} = //*[@class='cookie-warning active']//*[@class="cookie-warning__close"]</msg>
+<status status="PASS" starttime="20220623 21:37:11.524" endtime="20220623 21:37:11.524"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new_email_was_set}</var>
+<arg>//*[@class='email__alert success']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:11.524" level="INFO">${new_email_was_set} = //*[@class='email__alert success']</msg>
+<status status="PASS" starttime="20220623 21:37:11.524" endtime="20220623 21:37:11.524"/>
+</kw>
+<kw name="New Page" library="Browser">
+<var>&amp;{EMAIL_PAGE}</var>
+<arg>https://temp-mail.io/en/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:37:13.361" level="INFO">Successfully initialized new page object and opened url: https://temp-mail.io/en/</msg>
+<msg timestamp="20220623 21:37:13.362" level="INFO">&amp;{EMAIL_PAGE} = { page_id=page=9decc3f3-0c08-44d4-92b1-230a0b99316f | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:37:11.524" endtime="20220623 21:37:13.362"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EMAIL_PAGE}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220623 21:37:13.363" level="INFO">${EMAIL_PAGE} = {'page_id': 'page=9decc3f3-0c08-44d4-92b1-230a0b99316f', 'video_path': ''}</msg>
+<status status="PASS" starttime="20220623 21:37:13.362" endtime="20220623 21:37:13.363"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20220623 21:37:13.363" endtime="20220623 21:37:15.494"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${changeBtn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:15.495" endtime="20220623 21:37:15.589"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=name</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:15.589" level="INFO">Fills the text 'uatfw220623213711' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:15.589" endtime="20220623 21:37:15.675"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click</arg>
+<arg>${cookie_warning_close}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click" library="Browser">
+<arg>${cookie_warning_close}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:15.675" endtime="20220623 21:37:16.756"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:15.675" endtime="20220623 21:37:16.756"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${get_it_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:16.756" endtime="20220623 21:37:16.825"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${new_email_was_set}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220623 21:37:17.110" level="INFO">Waited for Element with selector //*[@class='email__alert success'] at state visible</msg>
+<status status="PASS" starttime="20220623 21:37:16.825" endtime="20220623 21:37:17.111"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20220623 21:37:17.111" endtime="20220623 21:37:17.115"/>
+</kw>
+<kw name="Get Attribute" library="Browser">
+<var>${email}</var>
+<arg>id=email</arg>
+<arg>title</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:17.146" level="INFO">${email} = uatfw220623213711@coooooool.com</msg>
+<status status="PASS" starttime="20220623 21:37:17.116" endtime="20220623 21:37:17.147"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:37:17.147" level="INFO">${email} = uatfw220623213711@coooooool.com</msg>
+<status status="PASS" starttime="20220623 21:37:17.147" endtime="20220623 21:37:17.147"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:11.522" endtime="20220623 21:37:17.147"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:11.522" endtime="20220623 21:37:17.147"/>
+</kw>
+<kw name="New Page" library="Browser">
+<var>&amp;{APP_PAGE}</var>
+<arg>${APP_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:37:21.851" level="INFO">Successfully initialized new page object and opened url: https://staging.fastwork.co/</msg>
+<msg timestamp="20220623 21:37:21.852" level="INFO">&amp;{APP_PAGE} = { page_id=page=ebd5fec0-4610-4524-ae7f-a455aa55da8d | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:37:17.147" endtime="20220623 21:37:21.852"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>&amp;{APP_PAGE}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220623 21:37:21.852" level="INFO">&amp;{APP_PAGE} = { page_id=page=ebd5fec0-4610-4524-ae7f-a455aa55da8d | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:37:21.852" endtime="20220623 21:37:21.852"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>id=login-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:21.852" endtime="20220623 21:37:22.192"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:11.520" endtime="20220623 21:37:22.193"/>
+</kw>
+<kw name="I Signup by Fill Form" library="keyword">
+<arg>True</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${submit_form_btn}</var>
+<arg>//*[@id="signup-request-form"]/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:22.194" level="INFO">${submit_form_btn} = //*[@id="signup-request-form"]/button</msg>
+<status status="PASS" starttime="20220623 21:37:22.194" endtime="20220623 21:37:22.194"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${verify_form_btn}</var>
+<arg>//*[@id="verify-account-request-form"]/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:22.194" level="INFO">${verify_form_btn} = //*[@id="verify-account-request-form"]/button</msg>
+<status status="PASS" starttime="20220623 21:37:22.194" endtime="20220623 21:37:22.194"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='authorize-request-form']/following::a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:22.194" endtime="20220623 21:37:22.642"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=signup-request-form</arg>
+<arg>attached</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220623 21:37:22.876" level="INFO">Waited for Element with selector id=signup-request-form at state attached</msg>
+<status status="PASS" starttime="20220623 21:37:22.643" endtime="20220623 21:37:22.876"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-username</arg>
+<arg>robottester${unique_no}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:22.877" level="INFO">Fills the text 'robottester220623213711' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:22.876" endtime="20220623 21:37:22.898"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-first_name</arg>
+<arg>Robot</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:22.898" level="INFO">Fills the text 'Robot' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:22.898" endtime="20220623 21:37:22.933"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-last_name</arg>
+<arg>Tester</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:22.934" level="INFO">Fills the text 'Tester' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:22.933" endtime="20220623 21:37:22.962"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-email</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:22.963" level="INFO">Fills the text 'uatfw220623213711@coooooool.com' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:22.963" endtime="20220623 21:37:22.982"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-password</arg>
+<arg>12345678</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:22.983" level="INFO">Fills the text '12345678' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:22.982" endtime="20220623 21:37:23.001"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-confirm_password</arg>
+<arg>12345678</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:23.002" level="INFO">Fills the text '12345678' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:23.001" endtime="20220623 21:37:23.024"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-phone_number</arg>
+<arg>${unique_no}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:23.025" level="INFO">Fills the text '220623213711' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:23.025" endtime="20220623 21:37:23.043"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-TCConsent</arg>
+<arg>True</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:23.043" endtime="20220623 21:37:23.082"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-PPConsent</arg>
+<arg>True</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:23.082" endtime="20220623 21:37:23.118"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-MKTConsent</arg>
+<arg>${mkt}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:23.118" endtime="20220623 21:37:23.178"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${submit_form_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:23.178" endtime="20220623 21:37:23.668"/>
+</kw>
+<kw name="I Get Verification Code From Email" library="keyword">
+<var>${verification_code}</var>
+<kw name="Switch Page" library="Browser">
+<arg>${EMAIL_PAGE.page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20220623 21:37:23.684" level="INFO">Successfully changed active page</msg>
+<status status="PASS" starttime="20220623 21:37:23.669" endtime="20220623 21:37:23.684"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${refresh_btn}</var>
+<arg>//button//span[contains(text(),'refresh')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:23.684" level="INFO">${refresh_btn} = //button//span[contains(text(),'refresh')]</msg>
+<status status="PASS" starttime="20220623 21:37:23.684" endtime="20220623 21:37:23.685"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${empty_email}</var>
+<arg>//div[@class='email-empty']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:23.685" level="INFO">${empty_email} = //div[@class='email-empty']</msg>
+<status status="PASS" starttime="20220623 21:37:23.685" endtime="20220623 21:37:23.685"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_is_empty}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:23.686" level="INFO">${email_is_empty} = True</msg>
+<status status="PASS" starttime="20220623 21:37:23.685" endtime="20220623 21:37:23.686"/>
+</kw>
+<while condition="${email_is_empty} is True">
+<iter>
+<kw name="Click" library="Browser">
+<arg>${refresh_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:23.686" endtime="20220623 21:37:23.746"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220623 21:37:26.746" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220623 21:37:23.746" endtime="20220623 21:37:26.746"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<var>${email_is_empty}</var>
+<arg>${empty_email}</arg>
+<arg>then</arg>
+<arg>bool(value &amp; visible)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:26.790" level="INFO">${email_is_empty} = True</msg>
+<status status="PASS" starttime="20220623 21:37:26.747" endtime="20220623 21:37:26.790"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:23.686" endtime="20220623 21:37:26.790"/>
+</iter>
+<iter>
+<kw name="Click" library="Browser">
+<arg>${refresh_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:26.790" endtime="20220623 21:37:26.845"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220623 21:37:29.848" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220623 21:37:26.845" endtime="20220623 21:37:29.848"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<var>${email_is_empty}</var>
+<arg>${empty_email}</arg>
+<arg>then</arg>
+<arg>bool(value &amp; visible)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:30.115" level="INFO">${email_is_empty} = False</msg>
+<status status="PASS" starttime="20220623 21:37:29.848" endtime="20220623 21:37:30.115"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:26.790" endtime="20220623 21:37:30.115"/>
+</iter>
+<status status="PASS" starttime="20220623 21:37:23.686" endtime="20220623 21:37:30.115"/>
+</while>
+<kw name="Get Text" library="Browser">
+<var>${email_title}</var>
+<arg>//*[@class='email-list']//div[@class='message__body']/span</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:30.131" level="INFO">${email_title} = / / Your verification code: *PTLMX5RF* ( https://u1993629.ct.sendgrid.net/ls/click?upn=Q-2BaihhLMRuSCbbxlX...</msg>
+<status status="PASS" starttime="20220623 21:37:30.115" endtime="20220623 21:37:30.131"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>@{verification_code}</var>
+<arg>${email_title}</arg>
+<arg>(?&lt;=\\*).+?(?=\\*)</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20220623 21:37:30.132" level="INFO">@{verification_code} = [ PTLMX5RF ]</msg>
+<status status="PASS" starttime="20220623 21:37:30.131" endtime="20220623 21:37:30.132"/>
+</kw>
+<kw name="Switch Page" library="Browser">
+<arg>${APP_PAGE.page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20220623 21:37:30.142" level="INFO">Successfully changed active page</msg>
+<status status="PASS" starttime="20220623 21:37:30.132" endtime="20220623 21:37:30.143"/>
+</kw>
+<msg timestamp="20220623 21:37:30.143" level="INFO">${verification_code} = PTLMX5RF</msg>
+<status status="PASS" starttime="20220623 21:37:23.668" endtime="20220623 21:37:30.143"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=verify-account-request-verification_code</arg>
+<arg>${verification_code}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:30.144" level="INFO">Fills the text 'PTLMX5RF' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:30.143" endtime="20220623 21:37:30.173"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${verify_form_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:30.174" endtime="20220623 21:37:32.493"/>
+</kw>
+<kw name="I Verify I Am Logging In" library="keyword">
+<kw name="Wait For Navigation" library="Browser">
+<arg>${APP_URL}</arg>
+<arg>timeout=20s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until page has navigated to given ``url``.</doc>
+<status status="PASS" starttime="20220623 21:37:32.494" endtime="20220623 21:37:40.219"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@class='user-button']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:40.219" endtime="20220623 21:37:41.027"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>//div[@class='panel-user-menu']//small</arg>
+<arg>==</arg>
+<arg>${verify_email}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:41.027" endtime="20220623 21:37:41.146"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:37:41.150" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:37:41.150" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:37:41.150" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:37:41.146" endtime="20220623 21:37:41.151"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:32.493" endtime="20220623 21:37:41.151"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:22.193" endtime="20220623 21:37:41.152"/>
+</kw>
+<kw name="I Teardown" library="keyword" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220623 21:37:41.167" level="INFO">[{"type": "chromium", "id": "browser=161bf85a-ac21-4f7e-8880-51891585c63c", "contexts": [{"type": "context", "id": "context=d959c0b1-1c18-421c-af84-5bb4e2e09947", "activePage": "page=ebd5fec0-4610-4524-ae7f-a455aa55da8d", "pages": [{"type": "page", "title": "1 new message - Temp Mail", "url": "https://temp-mail.io/en/", "id": "page=9decc3f3-0c08-44d4-92b1-230a0b99316f", "timestamp": 1655995031.696}, {"type": "page", "title": "Fastwork.co \u0e41\u0e2b\u0e25\u0e48\u0e07\u0e23\u0e27\u0e21\u0e1f\u0e23\u0e35\u0e41\u0e25\u0e19\u0e0b\u0e4c\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e17\u0e35\u0e48\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e17\u0e31\u0e48\u0e27\u0e44\u0e17\u0e22\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e43\u0e0a\u0e49", "url": "https://staging.fastwork.co/", "id": "page=ebd5fec0-4610-4524-ae7f-a455aa55da8d", "timestamp": 1655995037.201}]}], "activeContext": "context=d959c0b1-1c18-421c-af84-5bb4e2e09947", "activeBrowser": true}]</msg>
+<msg timestamp="20220623 21:37:41.170" level="INFO">Active context id</msg>
+<msg timestamp="20220623 21:37:41.172" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220623 21:37:41.176" level="INFO">Returned active context id</msg>
+<msg timestamp="20220623 21:37:41.183" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220623 21:37:41.217" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220623 21:37:41.152" endtime="20220623 21:37:41.218"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:37:41.222" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:37:41.222" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:37:41.222" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:37:41.218" endtime="20220623 21:37:41.223"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:41.152" endtime="20220623 21:37:41.223"/>
+</kw>
+<tag>C001</tag>
+<status status="PASS" starttime="20220623 21:37:11.517" endtime="20220623 21:37:41.224"/>
+</test>
+<test id="s1-s1-t2" name="Signup by Filling Every Fields Without MKT Consent" line="11">
+<kw name="I Go To Login Page" library="keyword" type="SETUP">
+<kw name="I Generate Unique Number" library="keyword">
+<var>${unique_no}</var>
+<kw name="Get Current Date" library="DateTime">
+<var>${unique_no}</var>
+<arg>time_zone=local</arg>
+<arg>result_format=%y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220623 21:37:41.263" level="INFO">${unique_no} = 220623213741</msg>
+<status status="PASS" starttime="20220623 21:37:41.262" endtime="20220623 21:37:41.263"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${unique_no}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:37:41.264" level="INFO">${unique_no} = 220623213741</msg>
+<status status="PASS" starttime="20220623 21:37:41.263" endtime="20220623 21:37:41.264"/>
+</kw>
+<msg timestamp="20220623 21:37:41.264" level="INFO">${unique_no} = 220623213741</msg>
+<status status="PASS" starttime="20220623 21:37:41.262" endtime="20220623 21:37:41.264"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${gen_email}==True</arg>
+<arg>I Generate Email</arg>
+<arg>uatfw${unique_no}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="I Generate Email" library="keyword">
+<arg>uatfw${unique_no}</arg>
+<kw name="I Generate Unique Number" library="keyword">
+<kw name="Get Current Date" library="DateTime">
+<var>${unique_no}</var>
+<arg>time_zone=local</arg>
+<arg>result_format=%y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220623 21:37:41.268" level="INFO">${unique_no} = 220623213741</msg>
+<status status="PASS" starttime="20220623 21:37:41.267" endtime="20220623 21:37:41.268"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${unique_no}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:37:41.269" level="INFO">${unique_no} = 220623213741</msg>
+<status status="PASS" starttime="20220623 21:37:41.269" endtime="20220623 21:37:41.269"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:41.266" endtime="20220623 21:37:41.270"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${change_btn}</var>
+<arg>//button//span[contains(text(),'change')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:41.270" level="INFO">${change_btn} = //button//span[contains(text(),'change')]</msg>
+<status status="PASS" starttime="20220623 21:37:41.270" endtime="20220623 21:37:41.270"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${get_it_btn}</var>
+<arg>//button[contains(text(),'Get it!')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:41.271" level="INFO">${get_it_btn} = //button[contains(text(),'Get it!')]</msg>
+<status status="PASS" starttime="20220623 21:37:41.271" endtime="20220623 21:37:41.271"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${cookie_warning_close}</var>
+<arg>//*[@class='cookie-warning active']//*[@class="cookie-warning__close"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:41.272" level="INFO">${cookie_warning_close} = //*[@class='cookie-warning active']//*[@class="cookie-warning__close"]</msg>
+<status status="PASS" starttime="20220623 21:37:41.272" endtime="20220623 21:37:41.272"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new_email_was_set}</var>
+<arg>//*[@class='email__alert success']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:41.272" level="INFO">${new_email_was_set} = //*[@class='email__alert success']</msg>
+<status status="PASS" starttime="20220623 21:37:41.272" endtime="20220623 21:37:41.272"/>
+</kw>
+<kw name="New Page" library="Browser">
+<var>&amp;{EMAIL_PAGE}</var>
+<arg>https://temp-mail.io/en/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:37:42.694" level="INFO">Successfully initialized new page object and opened url: https://temp-mail.io/en/</msg>
+<msg timestamp="20220623 21:37:42.694" level="INFO">&amp;{EMAIL_PAGE} = { page_id=page=a55ccbc3-3922-4a60-8725-5a454752e920 | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:37:41.272" endtime="20220623 21:37:42.694"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EMAIL_PAGE}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220623 21:37:42.695" level="INFO">${EMAIL_PAGE} = {'page_id': 'page=a55ccbc3-3922-4a60-8725-5a454752e920', 'video_path': ''}</msg>
+<status status="PASS" starttime="20220623 21:37:42.694" endtime="20220623 21:37:42.695"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20220623 21:37:42.695" endtime="20220623 21:37:43.643"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${changeBtn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:43.643" endtime="20220623 21:37:43.763"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=name</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:43.763" level="INFO">Fills the text 'uatfw220623213741' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:43.763" endtime="20220623 21:37:43.801"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click</arg>
+<arg>${cookie_warning_close}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click" library="Browser">
+<arg>${cookie_warning_close}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:53.979" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220623 21:37:53.979" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for selector "//*[@class='cookie-warning active']//*[@class="cookie-warning__close"]"
+============================================================</msg>
+<status status="FAIL" starttime="20220623 21:37:43.802" endtime="20220623 21:37:53.981"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:43.802" endtime="20220623 21:37:53.981"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${get_it_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:53.981" endtime="20220623 21:37:54.035"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${new_email_was_set}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220623 21:37:55.047" level="INFO">Waited for Element with selector //*[@class='email__alert success'] at state visible</msg>
+<status status="PASS" starttime="20220623 21:37:54.035" endtime="20220623 21:37:55.048"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20220623 21:37:55.048" endtime="20220623 21:37:55.050"/>
+</kw>
+<kw name="Get Attribute" library="Browser">
+<var>${email}</var>
+<arg>id=email</arg>
+<arg>title</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:55.079" level="INFO">${email} = uatfw220623213741@block521.com</msg>
+<status status="PASS" starttime="20220623 21:37:55.050" endtime="20220623 21:37:55.079"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:37:55.079" level="INFO">${email} = uatfw220623213741@block521.com</msg>
+<status status="PASS" starttime="20220623 21:37:55.079" endtime="20220623 21:37:55.079"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:41.265" endtime="20220623 21:37:55.080"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:41.265" endtime="20220623 21:37:55.080"/>
+</kw>
+<kw name="New Page" library="Browser">
+<var>&amp;{APP_PAGE}</var>
+<arg>${APP_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:37:56.596" level="INFO">Successfully initialized new page object and opened url: https://staging.fastwork.co/</msg>
+<msg timestamp="20220623 21:37:56.596" level="INFO">&amp;{APP_PAGE} = { page_id=page=da11e65e-c083-4d72-8c22-58d4998291f2 | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:37:55.080" endtime="20220623 21:37:56.596"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>&amp;{APP_PAGE}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220623 21:37:56.597" level="INFO">&amp;{APP_PAGE} = { page_id=page=da11e65e-c083-4d72-8c22-58d4998291f2 | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:37:56.596" endtime="20220623 21:37:56.597"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>id=login-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:56.597" endtime="20220623 21:37:57.630"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:41.261" endtime="20220623 21:37:57.630"/>
+</kw>
+<kw name="I Signup by Fill Form" library="keyword">
+<arg>False</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${submit_form_btn}</var>
+<arg>//*[@id="signup-request-form"]/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:57.631" level="INFO">${submit_form_btn} = //*[@id="signup-request-form"]/button</msg>
+<status status="PASS" starttime="20220623 21:37:57.631" endtime="20220623 21:37:57.631"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${verify_form_btn}</var>
+<arg>//*[@id="verify-account-request-form"]/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:57.632" level="INFO">${verify_form_btn} = //*[@id="verify-account-request-form"]/button</msg>
+<status status="PASS" starttime="20220623 21:37:57.632" endtime="20220623 21:37:57.632"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='authorize-request-form']/following::a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:57.632" endtime="20220623 21:37:57.975"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=signup-request-form</arg>
+<arg>attached</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220623 21:37:58.322" level="INFO">Waited for Element with selector id=signup-request-form at state attached</msg>
+<status status="PASS" starttime="20220623 21:37:57.975" endtime="20220623 21:37:58.322"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-username</arg>
+<arg>robottester${unique_no}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:58.323" level="INFO">Fills the text 'robottester220623213741' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:58.323" endtime="20220623 21:37:58.346"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-first_name</arg>
+<arg>Robot</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:58.347" level="INFO">Fills the text 'Robot' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:58.346" endtime="20220623 21:37:58.379"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-last_name</arg>
+<arg>Tester</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:58.379" level="INFO">Fills the text 'Tester' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:58.379" endtime="20220623 21:37:58.414"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-email</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:58.414" level="INFO">Fills the text 'uatfw220623213741@block521.com' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:58.414" endtime="20220623 21:37:58.434"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-password</arg>
+<arg>12345678</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:58.434" level="INFO">Fills the text '12345678' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:58.434" endtime="20220623 21:37:58.452"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-confirm_password</arg>
+<arg>12345678</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:58.452" level="INFO">Fills the text '12345678' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:58.452" endtime="20220623 21:37:58.468"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-phone_number</arg>
+<arg>${unique_no}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:37:58.468" level="INFO">Fills the text '220623213741' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:37:58.468" endtime="20220623 21:37:58.484"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-TCConsent</arg>
+<arg>True</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:58.484" endtime="20220623 21:37:58.533"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-PPConsent</arg>
+<arg>True</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:58.533" endtime="20220623 21:37:58.566"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-MKTConsent</arg>
+<arg>${mkt}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:58.566" endtime="20220623 21:37:58.624"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${submit_form_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:58.624" endtime="20220623 21:37:59.099"/>
+</kw>
+<kw name="I Get Verification Code From Email" library="keyword">
+<var>${verification_code}</var>
+<kw name="Switch Page" library="Browser">
+<arg>${EMAIL_PAGE.page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20220623 21:37:59.111" level="INFO">Successfully changed active page</msg>
+<status status="PASS" starttime="20220623 21:37:59.099" endtime="20220623 21:37:59.111"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${refresh_btn}</var>
+<arg>//button//span[contains(text(),'refresh')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:59.112" level="INFO">${refresh_btn} = //button//span[contains(text(),'refresh')]</msg>
+<status status="PASS" starttime="20220623 21:37:59.111" endtime="20220623 21:37:59.112"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${empty_email}</var>
+<arg>//div[@class='email-empty']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:59.112" level="INFO">${empty_email} = //div[@class='email-empty']</msg>
+<status status="PASS" starttime="20220623 21:37:59.112" endtime="20220623 21:37:59.112"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_is_empty}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:37:59.112" level="INFO">${email_is_empty} = True</msg>
+<status status="PASS" starttime="20220623 21:37:59.112" endtime="20220623 21:37:59.112"/>
+</kw>
+<while condition="${email_is_empty} is True">
+<iter>
+<kw name="Click" library="Browser">
+<arg>${refresh_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:37:59.113" endtime="20220623 21:37:59.189"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220623 21:38:02.192" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220623 21:37:59.189" endtime="20220623 21:38:02.192"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<var>${email_is_empty}</var>
+<arg>${empty_email}</arg>
+<arg>then</arg>
+<arg>bool(value &amp; visible)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:02.231" level="INFO">${email_is_empty} = True</msg>
+<status status="PASS" starttime="20220623 21:38:02.192" endtime="20220623 21:38:02.231"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:59.113" endtime="20220623 21:38:02.231"/>
+</iter>
+<iter>
+<kw name="Click" library="Browser">
+<arg>${refresh_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:02.231" endtime="20220623 21:38:02.291"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220623 21:38:05.299" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220623 21:38:02.291" endtime="20220623 21:38:05.299"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<var>${email_is_empty}</var>
+<arg>${empty_email}</arg>
+<arg>then</arg>
+<arg>bool(value &amp; visible)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:05.568" level="INFO">${email_is_empty} = False</msg>
+<status status="PASS" starttime="20220623 21:38:05.300" endtime="20220623 21:38:05.568"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:02.231" endtime="20220623 21:38:05.568"/>
+</iter>
+<status status="PASS" starttime="20220623 21:37:59.112" endtime="20220623 21:38:05.568"/>
+</while>
+<kw name="Get Text" library="Browser">
+<var>${email_title}</var>
+<arg>//*[@class='email-list']//div[@class='message__body']/span</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:05.585" level="INFO">${email_title} = / / Your verification code: *BFWOCGXO* ( https://u1993629.ct.sendgrid.net/ls/click?upn=Q-2BaihhLMRuSCbbxlX...</msg>
+<status status="PASS" starttime="20220623 21:38:05.569" endtime="20220623 21:38:05.585"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>@{verification_code}</var>
+<arg>${email_title}</arg>
+<arg>(?&lt;=\\*).+?(?=\\*)</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20220623 21:38:05.586" level="INFO">@{verification_code} = [ BFWOCGXO ]</msg>
+<status status="PASS" starttime="20220623 21:38:05.586" endtime="20220623 21:38:05.586"/>
+</kw>
+<kw name="Switch Page" library="Browser">
+<arg>${APP_PAGE.page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20220623 21:38:05.597" level="INFO">Successfully changed active page</msg>
+<status status="PASS" starttime="20220623 21:38:05.586" endtime="20220623 21:38:05.597"/>
+</kw>
+<msg timestamp="20220623 21:38:05.597" level="INFO">${verification_code} = BFWOCGXO</msg>
+<status status="PASS" starttime="20220623 21:37:59.099" endtime="20220623 21:38:05.597"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=verify-account-request-verification_code</arg>
+<arg>${verification_code}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:05.598" level="INFO">Fills the text 'BFWOCGXO' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:05.597" endtime="20220623 21:38:05.625"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${verify_form_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:05.626" endtime="20220623 21:38:07.802"/>
+</kw>
+<kw name="I Verify I Am Logging In" library="keyword">
+<kw name="Wait For Navigation" library="Browser">
+<arg>${APP_URL}</arg>
+<arg>timeout=20s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until page has navigated to given ``url``.</doc>
+<status status="PASS" starttime="20220623 21:38:07.802" endtime="20220623 21:38:20.449"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@class='user-button']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:20.449" endtime="20220623 21:38:21.328"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>//div[@class='panel-user-menu']//small</arg>
+<arg>==</arg>
+<arg>${verify_email}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:21.328" endtime="20220623 21:38:21.496"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:38:21.504" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:38:21.504" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:38:21.504" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:38:21.497" endtime="20220623 21:38:21.505"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:07.802" endtime="20220623 21:38:21.505"/>
+</kw>
+<status status="PASS" starttime="20220623 21:37:57.631" endtime="20220623 21:38:21.505"/>
+</kw>
+<kw name="I Teardown" library="keyword" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220623 21:38:21.512" level="INFO">[{"type": "chromium", "id": "browser=161bf85a-ac21-4f7e-8880-51891585c63c", "contexts": [{"type": "context", "id": "context=d959c0b1-1c18-421c-af84-5bb4e2e09947", "activePage": "page=da11e65e-c083-4d72-8c22-58d4998291f2", "pages": [{"type": "page", "title": "2 new messages - Temp Mail", "url": "https://temp-mail.io/en/", "id": "page=a55ccbc3-3922-4a60-8725-5a454752e920", "timestamp": 1655995061.544}, {"type": "page", "title": "Fastwork.co \u0e41\u0e2b\u0e25\u0e48\u0e07\u0e23\u0e27\u0e21\u0e1f\u0e23\u0e35\u0e41\u0e25\u0e19\u0e0b\u0e4c\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e17\u0e35\u0e48\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e17\u0e31\u0e48\u0e27\u0e44\u0e17\u0e22\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e43\u0e0a\u0e49", "url": "https://staging.fastwork.co/", "id": "page=da11e65e-c083-4d72-8c22-58d4998291f2", "timestamp": 1655995075.147}]}], "activeContext": "context=d959c0b1-1c18-421c-af84-5bb4e2e09947", "activeBrowser": true}]</msg>
+<msg timestamp="20220623 21:38:21.515" level="INFO">Active context id</msg>
+<msg timestamp="20220623 21:38:21.517" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220623 21:38:21.518" level="INFO">Returned active context id</msg>
+<msg timestamp="20220623 21:38:21.521" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220623 21:38:21.553" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220623 21:38:21.506" endtime="20220623 21:38:21.554"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:38:21.566" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:38:21.566" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:38:21.566" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:38:21.554" endtime="20220623 21:38:21.567"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:21.506" endtime="20220623 21:38:21.567"/>
+</kw>
+<tag>C001</tag>
+<status status="PASS" starttime="20220623 21:37:41.256" endtime="20220623 21:38:21.568"/>
+</test>
+<doc>Users can sign up on site by filling information</doc>
+<status status="PASS" starttime="20220623 21:37:11.509" endtime="20220623 21:38:21.614"/>
+</suite>
+<suite id="s1-s2" name="C002 Signup by google account" source="D:\Projects\fw-assignment\Authentication_and_user\C002_Signup_by_google_account.robot">
+<test id="s1-s2-t1" name="Signup Fastwork With Old Gmail" line="11">
+<tag>C002</tag>
+<tag>skip</tag>
+<status status="SKIP" starttime="20220623 21:38:21.645" endtime="20220623 21:38:21.650">Test skipped using '--skip' command line option.</status>
+</test>
+<test id="s1-s2-t2" name="Signup Fastwork With New Gmail" line="15">
+<tag>C002</tag>
+<tag>skip</tag>
+<status status="SKIP" starttime="20220623 21:38:21.655" endtime="20220623 21:38:21.660">Test skipped using '--skip' command line option.</status>
+</test>
+<doc>Users can sign up via google-account
+Google sometime required phone verification
+So, we cannot use automated test for this case</doc>
+<status status="SKIP" starttime="20220623 21:38:21.624" endtime="20220623 21:38:21.665"/>
+</suite>
+<suite id="s1-s3" name="C003 Login by signup email" source="D:\Projects\fw-assignment\Authentication_and_user\C003_Login_by_signup_email.robot">
+<test id="s1-s3-t1" name="Login Using Account Signup With An Email" line="22">
+<kw name="I Signup By Email And Go To Login Page" type="SETUP">
+<kw name="I Go To Login Page" library="keyword">
+<kw name="I Generate Unique Number" library="keyword">
+<var>${unique_no}</var>
+<kw name="Get Current Date" library="DateTime">
+<var>${unique_no}</var>
+<arg>time_zone=local</arg>
+<arg>result_format=%y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220623 21:38:21.699" level="INFO">${unique_no} = 220623213821</msg>
+<status status="PASS" starttime="20220623 21:38:21.698" endtime="20220623 21:38:21.699"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${unique_no}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:38:21.700" level="INFO">${unique_no} = 220623213821</msg>
+<status status="PASS" starttime="20220623 21:38:21.699" endtime="20220623 21:38:21.700"/>
+</kw>
+<msg timestamp="20220623 21:38:21.700" level="INFO">${unique_no} = 220623213821</msg>
+<status status="PASS" starttime="20220623 21:38:21.698" endtime="20220623 21:38:21.700"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${gen_email}==True</arg>
+<arg>I Generate Email</arg>
+<arg>uatfw${unique_no}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="I Generate Email" library="keyword">
+<arg>uatfw${unique_no}</arg>
+<kw name="I Generate Unique Number" library="keyword">
+<kw name="Get Current Date" library="DateTime">
+<var>${unique_no}</var>
+<arg>time_zone=local</arg>
+<arg>result_format=%y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220623 21:38:21.704" level="INFO">${unique_no} = 220623213821</msg>
+<status status="PASS" starttime="20220623 21:38:21.703" endtime="20220623 21:38:21.704"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${unique_no}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:38:21.705" level="INFO">${unique_no} = 220623213821</msg>
+<status status="PASS" starttime="20220623 21:38:21.704" endtime="20220623 21:38:21.705"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:21.703" endtime="20220623 21:38:21.705"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${change_btn}</var>
+<arg>//button//span[contains(text(),'change')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:21.706" level="INFO">${change_btn} = //button//span[contains(text(),'change')]</msg>
+<status status="PASS" starttime="20220623 21:38:21.706" endtime="20220623 21:38:21.706"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${get_it_btn}</var>
+<arg>//button[contains(text(),'Get it!')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:21.707" level="INFO">${get_it_btn} = //button[contains(text(),'Get it!')]</msg>
+<status status="PASS" starttime="20220623 21:38:21.706" endtime="20220623 21:38:21.707"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${cookie_warning_close}</var>
+<arg>//*[@class='cookie-warning active']//*[@class="cookie-warning__close"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:21.707" level="INFO">${cookie_warning_close} = //*[@class='cookie-warning active']//*[@class="cookie-warning__close"]</msg>
+<status status="PASS" starttime="20220623 21:38:21.707" endtime="20220623 21:38:21.707"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new_email_was_set}</var>
+<arg>//*[@class='email__alert success']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:21.707" level="INFO">${new_email_was_set} = //*[@class='email__alert success']</msg>
+<status status="PASS" starttime="20220623 21:38:21.707" endtime="20220623 21:38:21.707"/>
+</kw>
+<kw name="New Page" library="Browser">
+<var>&amp;{EMAIL_PAGE}</var>
+<arg>https://temp-mail.io/en/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:38:22.944" level="INFO">Successfully initialized new page object and opened url: https://temp-mail.io/en/</msg>
+<msg timestamp="20220623 21:38:22.944" level="INFO">&amp;{EMAIL_PAGE} = { page_id=page=5a9a5865-c12c-478c-9097-d299d28b2d0f | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:38:21.708" endtime="20220623 21:38:22.944"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EMAIL_PAGE}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220623 21:38:22.945" level="INFO">${EMAIL_PAGE} = {'page_id': 'page=5a9a5865-c12c-478c-9097-d299d28b2d0f', 'video_path': ''}</msg>
+<status status="PASS" starttime="20220623 21:38:22.944" endtime="20220623 21:38:22.945"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20220623 21:38:22.945" endtime="20220623 21:38:24.123"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${changeBtn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:24.123" endtime="20220623 21:38:24.229"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=name</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:24.230" level="INFO">Fills the text 'uatfw220623213821' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:24.229" endtime="20220623 21:38:24.265"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click</arg>
+<arg>${cookie_warning_close}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click" library="Browser">
+<arg>${cookie_warning_close}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:34.422" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220623 21:38:34.422" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for selector "//*[@class='cookie-warning active']//*[@class="cookie-warning__close"]"
+============================================================</msg>
+<status status="FAIL" starttime="20220623 21:38:24.266" endtime="20220623 21:38:34.423"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:24.265" endtime="20220623 21:38:34.423"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${get_it_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:34.423" endtime="20220623 21:38:34.486"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${new_email_was_set}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220623 21:38:34.971" level="INFO">Waited for Element with selector //*[@class='email__alert success'] at state visible</msg>
+<status status="PASS" starttime="20220623 21:38:34.487" endtime="20220623 21:38:34.971"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20220623 21:38:34.971" endtime="20220623 21:38:34.973"/>
+</kw>
+<kw name="Get Attribute" library="Browser">
+<var>${email}</var>
+<arg>id=email</arg>
+<arg>title</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:35.001" level="INFO">${email} = uatfw220623213821@plancetose.com</msg>
+<status status="PASS" starttime="20220623 21:38:34.974" endtime="20220623 21:38:35.001"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:38:35.001" level="INFO">${email} = uatfw220623213821@plancetose.com</msg>
+<status status="PASS" starttime="20220623 21:38:35.001" endtime="20220623 21:38:35.001"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:21.702" endtime="20220623 21:38:35.001"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:21.701" endtime="20220623 21:38:35.001"/>
+</kw>
+<kw name="New Page" library="Browser">
+<var>&amp;{APP_PAGE}</var>
+<arg>${APP_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:38:36.640" level="INFO">Successfully initialized new page object and opened url: https://staging.fastwork.co/</msg>
+<msg timestamp="20220623 21:38:36.640" level="INFO">&amp;{APP_PAGE} = { page_id=page=ff7a707c-f1a3-493c-9d5f-2d5b5fe44fed | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:38:35.001" endtime="20220623 21:38:36.640"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>&amp;{APP_PAGE}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220623 21:38:36.641" level="INFO">&amp;{APP_PAGE} = { page_id=page=ff7a707c-f1a3-493c-9d5f-2d5b5fe44fed | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:38:36.641" endtime="20220623 21:38:36.641"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>id=login-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:36.642" endtime="20220623 21:38:37.813"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:21.697" endtime="20220623 21:38:37.813"/>
+</kw>
+<kw name="I Signup by Fill Form" library="keyword">
+<arg>False</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${submit_form_btn}</var>
+<arg>//*[@id="signup-request-form"]/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:37.814" level="INFO">${submit_form_btn} = //*[@id="signup-request-form"]/button</msg>
+<status status="PASS" starttime="20220623 21:38:37.814" endtime="20220623 21:38:37.814"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${verify_form_btn}</var>
+<arg>//*[@id="verify-account-request-form"]/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:37.814" level="INFO">${verify_form_btn} = //*[@id="verify-account-request-form"]/button</msg>
+<status status="PASS" starttime="20220623 21:38:37.814" endtime="20220623 21:38:37.814"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='authorize-request-form']/following::a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:37.814" endtime="20220623 21:38:38.073"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=signup-request-form</arg>
+<arg>attached</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220623 21:38:38.335" level="INFO">Waited for Element with selector id=signup-request-form at state attached</msg>
+<status status="PASS" starttime="20220623 21:38:38.073" endtime="20220623 21:38:38.335"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-username</arg>
+<arg>robottester${unique_no}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:38.336" level="INFO">Fills the text 'robottester220623213821' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:38.335" endtime="20220623 21:38:38.432"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-first_name</arg>
+<arg>Robot</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:38.433" level="INFO">Fills the text 'Robot' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:38.433" endtime="20220623 21:38:38.467"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-last_name</arg>
+<arg>Tester</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:38.468" level="INFO">Fills the text 'Tester' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:38.467" endtime="20220623 21:38:38.486"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-email</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:38.486" level="INFO">Fills the text 'uatfw220623213821@plancetose.com' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:38.486" endtime="20220623 21:38:38.505"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-password</arg>
+<arg>12345678</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:38.505" level="INFO">Fills the text '12345678' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:38.505" endtime="20220623 21:38:38.520"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-confirm_password</arg>
+<arg>12345678</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:38.521" level="INFO">Fills the text '12345678' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:38.521" endtime="20220623 21:38:38.537"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signup-request-phone_number</arg>
+<arg>${unique_no}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:38.538" level="INFO">Fills the text '220623213821' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:38.537" endtime="20220623 21:38:38.554"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-TCConsent</arg>
+<arg>True</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:38.554" endtime="20220623 21:38:38.589"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-PPConsent</arg>
+<arg>True</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:38.589" endtime="20220623 21:38:38.633"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>id=post-MKTConsent</arg>
+<arg>${mkt}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:38.633" endtime="20220623 21:38:38.680"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${submit_form_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:38.680" endtime="20220623 21:38:38.921"/>
+</kw>
+<kw name="I Get Verification Code From Email" library="keyword">
+<var>${verification_code}</var>
+<kw name="Switch Page" library="Browser">
+<arg>${EMAIL_PAGE.page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20220623 21:38:38.933" level="INFO">Successfully changed active page</msg>
+<status status="PASS" starttime="20220623 21:38:38.921" endtime="20220623 21:38:38.934"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${refresh_btn}</var>
+<arg>//button//span[contains(text(),'refresh')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:38.934" level="INFO">${refresh_btn} = //button//span[contains(text(),'refresh')]</msg>
+<status status="PASS" starttime="20220623 21:38:38.934" endtime="20220623 21:38:38.934"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${empty_email}</var>
+<arg>//div[@class='email-empty']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:38.934" level="INFO">${empty_email} = //div[@class='email-empty']</msg>
+<status status="PASS" starttime="20220623 21:38:38.934" endtime="20220623 21:38:38.934"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_is_empty}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220623 21:38:38.934" level="INFO">${email_is_empty} = True</msg>
+<status status="PASS" starttime="20220623 21:38:38.934" endtime="20220623 21:38:38.934"/>
+</kw>
+<while condition="${email_is_empty} is True">
+<iter>
+<kw name="Click" library="Browser">
+<arg>${refresh_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:38.935" endtime="20220623 21:38:39.013"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220623 21:38:42.026" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220623 21:38:39.013" endtime="20220623 21:38:42.026"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<var>${email_is_empty}</var>
+<arg>${empty_email}</arg>
+<arg>then</arg>
+<arg>bool(value &amp; visible)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:42.063" level="INFO">${email_is_empty} = True</msg>
+<status status="PASS" starttime="20220623 21:38:42.026" endtime="20220623 21:38:42.064"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:38.935" endtime="20220623 21:38:42.064"/>
+</iter>
+<iter>
+<kw name="Click" library="Browser">
+<arg>${refresh_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:42.064" endtime="20220623 21:38:42.120"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220623 21:38:45.132" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220623 21:38:42.120" endtime="20220623 21:38:45.133"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<var>${email_is_empty}</var>
+<arg>${empty_email}</arg>
+<arg>then</arg>
+<arg>bool(value &amp; visible)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:45.402" level="INFO">${email_is_empty} = False</msg>
+<status status="PASS" starttime="20220623 21:38:45.133" endtime="20220623 21:38:45.402"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:42.064" endtime="20220623 21:38:45.402"/>
+</iter>
+<status status="PASS" starttime="20220623 21:38:38.934" endtime="20220623 21:38:45.402"/>
+</while>
+<kw name="Get Text" library="Browser">
+<var>${email_title}</var>
+<arg>//*[@class='email-list']//div[@class='message__body']/span</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:45.415" level="INFO">${email_title} = / / Your verification code: *QUA62CQ9* ( https://u1993629.ct.sendgrid.net/ls/click?upn=Q-2BaihhLMRuSCbbxlX...</msg>
+<status status="PASS" starttime="20220623 21:38:45.402" endtime="20220623 21:38:45.415"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>@{verification_code}</var>
+<arg>${email_title}</arg>
+<arg>(?&lt;=\\*).+?(?=\\*)</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20220623 21:38:45.415" level="INFO">@{verification_code} = [ QUA62CQ9 ]</msg>
+<status status="PASS" starttime="20220623 21:38:45.415" endtime="20220623 21:38:45.415"/>
+</kw>
+<kw name="Switch Page" library="Browser">
+<arg>${APP_PAGE.page_id}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20220623 21:38:45.426" level="INFO">Successfully changed active page</msg>
+<status status="PASS" starttime="20220623 21:38:45.416" endtime="20220623 21:38:45.426"/>
+</kw>
+<msg timestamp="20220623 21:38:45.426" level="INFO">${verification_code} = QUA62CQ9</msg>
+<status status="PASS" starttime="20220623 21:38:38.921" endtime="20220623 21:38:45.426"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=verify-account-request-verification_code</arg>
+<arg>${verification_code}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:38:45.427" level="INFO">Fills the text 'QUA62CQ9' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:38:45.426" endtime="20220623 21:38:45.457"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${verify_form_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:45.458" endtime="20220623 21:38:47.507"/>
+</kw>
+<kw name="I Verify I Am Logging In" library="keyword">
+<kw name="Wait For Navigation" library="Browser">
+<arg>${APP_URL}</arg>
+<arg>timeout=20s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until page has navigated to given ``url``.</doc>
+<status status="PASS" starttime="20220623 21:38:47.508" endtime="20220623 21:38:57.305"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@class='user-button']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:57.305" endtime="20220623 21:38:58.236"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>//div[@class='panel-user-menu']//small</arg>
+<arg>==</arg>
+<arg>${verify_email}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:58.236" endtime="20220623 21:38:58.366"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:38:58.371" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:38:58.371" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:38:58.371" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:38:58.367" endtime="20220623 21:38:58.372"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:47.507" endtime="20220623 21:38:58.372"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:37.814" endtime="20220623 21:38:58.372"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@data-selenium='user-menu-panel.link.sign-out']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:38:58.373" endtime="20220623 21:38:58.579"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:38:58.582" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:38:58.582" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:38:58.582" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:38:58.579" endtime="20220623 21:38:58.582"/>
+</kw>
+<kw name="Close Context" library="Browser">
+<arg>ALL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<msg timestamp="20220623 21:38:58.589" level="INFO">[{"type": "chromium", "id": "browser=161bf85a-ac21-4f7e-8880-51891585c63c", "contexts": [{"type": "context", "id": "context=d959c0b1-1c18-421c-af84-5bb4e2e09947", "activePage": "page=ff7a707c-f1a3-493c-9d5f-2d5b5fe44fed", "pages": [{"type": "page", "title": "2 new messages - Temp Mail", "url": "https://temp-mail.io/en/", "id": "page=5a9a5865-c12c-478c-9097-d299d28b2d0f", "timestamp": 1655995101.957}, {"type": "page", "title": "Fastwork - Auth SSO", "url": "https://auth-staging.fastwork.co/oauth/signout-device?accessToken=undefined&amp;redirectUrl=https://staging.fastwork.co", "id": "page=ff7a707c-f1a3-493c-9d5f-2d5b5fe44fed", "timestamp": 1655995115.049}]}], "activeContext": "context=d959c0b1-1c18-421c-af84-5bb4e2e09947", "activeBrowser": true}]</msg>
+<msg timestamp="20220623 21:38:58.591" level="INFO">Active context id</msg>
+<msg timestamp="20220623 21:38:58.594" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220623 21:38:58.596" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220623 21:38:58.718" level="INFO">Successfully closed Context</msg>
+<status status="PASS" starttime="20220623 21:38:58.583" endtime="20220623 21:38:58.718"/>
+</kw>
+<kw name="Close Page" library="Browser">
+<arg>ALL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220623 21:38:58.725" level="INFO">[{"type": "chromium", "id": "browser=161bf85a-ac21-4f7e-8880-51891585c63c", "contexts": [], "activeBrowser": true}]</msg>
+<msg timestamp="20220623 21:38:58.728" level="INFO">Active context id</msg>
+<msg timestamp="20220623 21:38:58.732" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220623 21:38:58.735" level="INFO">Returned info that no contexts are open</msg>
+<status status="PASS" starttime="20220623 21:38:58.718" endtime="20220623 21:38:58.736"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<arg>ALL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220623 21:38:58.980" level="INFO">Closed all browsers</msg>
+<status status="PASS" starttime="20220623 21:38:58.736" endtime="20220623 21:38:58.980"/>
+</kw>
+<kw name="I Open Browser &amp; Go To Application" library="keyword">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220623 21:38:58.981" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\Projects\\fw-assignment\\z-output\\20220623213710\\browser\\traces\\ff0a75da-37c8-4434-a664-bf8ede14579f"}</msg>
+<msg timestamp="20220623 21:38:59.282" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\Projects\\fw-assignment\\z-output\\20220623213710\\browser\\traces\\ff0a75da-37c8-4434-a664-bf8ede14579f"}</msg>
+<status status="PASS" starttime="20220623 21:38:58.980" endtime="20220623 21:38:59.282"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>10s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20220623 21:38:59.285" level="INFO">No context open.</msg>
+<status status="PASS" starttime="20220623 21:38:59.283" endtime="20220623 21:38:59.285"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220623 21:38:59.286" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220623 21:38:59.300" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220623 21:38:59.300" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220623 21:38:59.286" endtime="20220623 21:38:59.301"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:58.980" endtime="20220623 21:38:59.301"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${APP_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:39:03.811" level="INFO">Successfully initialized new page object and opened url: https://staging.fastwork.co/</msg>
+<status status="PASS" starttime="20220623 21:38:59.301" endtime="20220623 21:39:03.811"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>id=login-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:03.811" endtime="20220623 21:39:04.086"/>
+</kw>
+<status status="PASS" starttime="20220623 21:38:21.696" endtime="20220623 21:39:04.087"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=authorize-request-Credential</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:39:04.088" level="INFO">Fills the text 'uatfw220623213821@plancetose.com' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:39:04.087" endtime="20220623 21:39:04.211"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='authorize-request-form']/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:04.212" endtime="20220623 21:39:04.441"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=signin-request-Password</arg>
+<arg>12345678</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:39:04.442" level="INFO">Fills the text '12345678' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:39:04.442" endtime="20220623 21:39:04.541"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='signin-request-form']/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:04.542" endtime="20220623 21:39:06.774"/>
+</kw>
+<kw name="I Verify I Am Logging In" library="keyword">
+<kw name="Wait For Navigation" library="Browser">
+<arg>${APP_URL}</arg>
+<arg>timeout=20s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until page has navigated to given ``url``.</doc>
+<status status="PASS" starttime="20220623 21:39:06.776" endtime="20220623 21:39:13.520"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@class='user-button']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:13.521" endtime="20220623 21:39:14.391"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>//div[@class='panel-user-menu']//small</arg>
+<arg>==</arg>
+<arg>${verify_email}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:14.391" endtime="20220623 21:39:14.555"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:39:14.559" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:39:14.559" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:39:14.559" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:39:14.555" endtime="20220623 21:39:14.560"/>
+</kw>
+<status status="PASS" starttime="20220623 21:39:06.775" endtime="20220623 21:39:14.560"/>
+</kw>
+<kw name="I Teardown" library="keyword" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220623 21:39:14.567" level="INFO">[{"type": "chromium", "id": "browser=11925d9d-213a-4b26-b5fe-ea3d6df2a991", "contexts": [{"type": "context", "id": "context=48f78a36-5951-4d81-9870-6c8ed9e8f3a8", "activePage": "page=f46fe795-f76c-4461-9d30-e272c1e579b2", "pages": [{"type": "page", "title": "Fastwork.co \u0e41\u0e2b\u0e25\u0e48\u0e07\u0e23\u0e27\u0e21\u0e1f\u0e23\u0e35\u0e41\u0e25\u0e19\u0e0b\u0e4c\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e17\u0e35\u0e48\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e17\u0e31\u0e48\u0e27\u0e44\u0e17\u0e22\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e43\u0e0a\u0e49", "url": "https://staging.fastwork.co/", "id": "page=f46fe795-f76c-4461-9d30-e272c1e579b2", "timestamp": 1655995139.465}]}], "activeContext": "context=48f78a36-5951-4d81-9870-6c8ed9e8f3a8", "activeBrowser": true}]</msg>
+<msg timestamp="20220623 21:39:14.570" level="INFO">Active context id</msg>
+<msg timestamp="20220623 21:39:14.572" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220623 21:39:14.575" level="INFO">Returned active context id</msg>
+<msg timestamp="20220623 21:39:14.579" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220623 21:39:14.603" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220623 21:39:14.561" endtime="20220623 21:39:14.603"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:39:14.681" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:39:14.681" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:39:14.681" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:39:14.603" endtime="20220623 21:39:14.682"/>
+</kw>
+<status status="PASS" starttime="20220623 21:39:14.561" endtime="20220623 21:39:14.683"/>
+</kw>
+<tag>C003</tag>
+<status status="PASS" starttime="20220623 21:38:21.691" endtime="20220623 21:39:14.683"/>
+</test>
+<doc>Users can login using account signup with an email</doc>
+<status status="PASS" starttime="20220623 21:38:21.673" endtime="20220623 21:39:14.734"/>
+</suite>
+<suite id="s1-s4" name="C004 Login by google account" source="D:\Projects\fw-assignment\Authentication_and_user\C004_Login_by_google_account.robot">
+<test id="s1-s4-t1" name="Login Using Signup Google Account" line="11">
+<kw name="I Go To Login Page" library="keyword">
+<arg>False</arg>
+<kw name="I Generate Unique Number" library="keyword">
+<var>${unique_no}</var>
+<kw name="Get Current Date" library="DateTime">
+<var>${unique_no}</var>
+<arg>time_zone=local</arg>
+<arg>result_format=%y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220623 21:39:14.760" level="INFO">${unique_no} = 220623213914</msg>
+<status status="PASS" starttime="20220623 21:39:14.760" endtime="20220623 21:39:14.761"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${unique_no}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220623 21:39:14.761" level="INFO">${unique_no} = 220623213914</msg>
+<status status="PASS" starttime="20220623 21:39:14.761" endtime="20220623 21:39:14.761"/>
+</kw>
+<msg timestamp="20220623 21:39:14.762" level="INFO">${unique_no} = 220623213914</msg>
+<status status="PASS" starttime="20220623 21:39:14.759" endtime="20220623 21:39:14.762"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${gen_email}==True</arg>
+<arg>I Generate Email</arg>
+<arg>uatfw${unique_no}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220623 21:39:14.762" endtime="20220623 21:39:14.762"/>
+</kw>
+<kw name="New Page" library="Browser">
+<var>&amp;{APP_PAGE}</var>
+<arg>${APP_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220623 21:39:20.845" level="INFO">Successfully initialized new page object and opened url: https://staging.fastwork.co/</msg>
+<msg timestamp="20220623 21:39:20.845" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg timestamp="20220623 21:39:20.845" level="INFO">&amp;{APP_PAGE} = { page_id=page=e03094c3-3fb7-4f83-8f91-81d8e73c8aaa | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:39:14.763" endtime="20220623 21:39:20.845"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>&amp;{APP_PAGE}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220623 21:39:20.846" level="INFO">&amp;{APP_PAGE} = { page_id=page=e03094c3-3fb7-4f83-8f91-81d8e73c8aaa | video_path= }</msg>
+<status status="PASS" starttime="20220623 21:39:20.846" endtime="20220623 21:39:20.846"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>id=login-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:20.846" endtime="20220623 21:39:21.184"/>
+</kw>
+<status status="PASS" starttime="20220623 21:39:14.758" endtime="20220623 21:39:21.184"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//a[@href='/auth/google']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:21.185" endtime="20220623 21:39:21.825"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=identifierId</arg>
+<arg>uatfw.testtest@gmail.com</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:39:21.826" level="INFO">Fills the text 'uatfw.testtest@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:39:21.825" endtime="20220623 21:39:22.335"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>id=identifierNext</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:22.335" endtime="20220623 21:39:22.399"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id="password"]//input</arg>
+<arg>A12345678!</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220623 21:39:22.400" level="INFO">Fills the text 'A12345678!' in the given field.</msg>
+<status status="PASS" starttime="20220623 21:39:22.400" endtime="20220623 21:39:23.403"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="passwordNext"]//button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:23.403" endtime="20220623 21:39:23.658"/>
+</kw>
+<kw name="I Verify I Am Logging In" library="keyword">
+<arg>uatfw.testtest@gmail.com</arg>
+<kw name="Wait For Navigation" library="Browser">
+<arg>${APP_URL}</arg>
+<arg>timeout=20s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until page has navigated to given ``url``.</doc>
+<status status="PASS" starttime="20220623 21:39:23.659" endtime="20220623 21:39:32.710"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@class='user-button']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:32.710" endtime="20220623 21:39:33.709"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>//div[@class='panel-user-menu']//small</arg>
+<arg>==</arg>
+<arg>${verify_email}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220623 21:39:33.709" endtime="20220623 21:39:33.782"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:39:33.785" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:39:33.785" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:39:33.785" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:39:33.782" endtime="20220623 21:39:33.786"/>
+</kw>
+<status status="PASS" starttime="20220623 21:39:23.659" endtime="20220623 21:39:33.786"/>
+</kw>
+<kw name="I Teardown" library="keyword" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220623 21:39:33.803" level="INFO">[{"type": "chromium", "id": "browser=11925d9d-213a-4b26-b5fe-ea3d6df2a991", "contexts": [{"type": "context", "id": "context=7849a990-eb73-4759-bd92-2853a076c073", "activePage": "page=e03094c3-3fb7-4f83-8f91-81d8e73c8aaa", "pages": [{"type": "page", "title": "Fastwork.co \u0e41\u0e2b\u0e25\u0e48\u0e07\u0e23\u0e27\u0e21\u0e1f\u0e23\u0e35\u0e41\u0e25\u0e19\u0e0b\u0e4c\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e17\u0e35\u0e48\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e17\u0e31\u0e48\u0e27\u0e44\u0e17\u0e22\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e43\u0e0a\u0e49", "url": "https://staging.fastwork.co/", "id": "page=e03094c3-3fb7-4f83-8f91-81d8e73c8aaa", "timestamp": 1655995155.034}]}], "activeContext": "context=7849a990-eb73-4759-bd92-2853a076c073", "activeBrowser": true}]</msg>
+<msg timestamp="20220623 21:39:33.805" level="INFO">Active context id</msg>
+<msg timestamp="20220623 21:39:33.806" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220623 21:39:33.807" level="INFO">Returned active context id</msg>
+<msg timestamp="20220623 21:39:33.811" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220623 21:39:33.830" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220623 21:39:33.787" endtime="20220623 21:39:33.830"/>
+</kw>
+<kw name="Eat All Cookies" library="Browser">
+<doc>Eat all cookies for all easter.</doc>
+<msg timestamp="20220623 21:39:33.897" level="INFO">All cookies deleted.</msg>
+<msg timestamp="20220623 21:39:33.897" level="INFO" html="true">
+        &lt;iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/I5e6ftNpGsU"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+        &lt;/iframe&gt;</msg>
+<msg timestamp="20220623 21:39:33.897" level="WARN">Cookie monster ate all cookies!!</msg>
+<status status="PASS" starttime="20220623 21:39:33.831" endtime="20220623 21:39:33.899"/>
+</kw>
+<status status="PASS" starttime="20220623 21:39:33.786" endtime="20220623 21:39:33.899"/>
+</kw>
+<tag>C004</tag>
+<status status="PASS" starttime="20220623 21:39:14.754" endtime="20220623 21:39:33.900"/>
+</test>
+<doc>Users can login using account signup with the google-account
+Sometime Google is required multi-factor authentication
+So, we cannot use automated test here</doc>
+<status status="PASS" starttime="20220623 21:39:14.741" endtime="20220623 21:39:33.949"/>
+</suite>
+<status status="PASS" starttime="20220623 21:37:10.505" endtime="20220623 21:39:33.959"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="2">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">C001</stat>
+<stat pass="0" fail="0" skip="2">C002</stat>
+<stat pass="1" fail="0" skip="0">C003</stat>
+<stat pass="1" fail="0" skip="0">C004</stat>
+<stat pass="0" fail="0" skip="2">skip</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="2" id="s1" name="Authentication_and_user">Authentication_and_user</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="C001 Signup by filling info">Authentication_and_user.C001 Signup by filling info</stat>
+<stat pass="0" fail="0" skip="2" id="s1-s2" name="C002 Signup by google account">Authentication_and_user.C002 Signup by google account</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="C003 Login by signup email">Authentication_and_user.C003 Login by signup email</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="C004 Login by google account">Authentication_and_user.C004 Login by google account</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220623 21:37:41.150" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:37:41.222" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:38:21.504" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:38:21.566" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:38:58.371" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:38:58.582" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:39:14.559" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:39:14.681" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:39:33.785" level="WARN">Cookie monster ate all cookies!!</msg>
+<msg timestamp="20220623 21:39:33.897" level="WARN">Cookie monster ate all cookies!!</msg>
+</errors>
+</robot>
