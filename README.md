@@ -45,11 +45,12 @@ Description of the project structure
 ```
 
 ## D. Share obstacles, problems & solutions 
-I've designed to create test scripts at first, but I've stuck with some point.
+I've designed to create test scripts at first, but I was stuck with some point.
    1. I got business requirements with petty of detials. So, I decided to test based on positive cases what users can do for get the jobs done! It would be better If I have more details of how application works. ie. validation, logic, data
    2. Automated test needs specific expected results. So, I have to manual some functions. For example ...
       1. Signup Gmail before signup Fastwork because Google needs multi-factor verification.
       2. Search function. I have no idea how application works. This function gets varity of data. I decided just to list the simple cases which user may do.
+   3. Communication - I think I made a bad decision by not asking some question during this challenge. their are so gray and unclear requirements. So, I decided to desingnd base on my feeling.
 
 In conclusion, I’m not so confidence if I must do black-box testing. I would appreciate more specific requirements which I can identify expected results. (No guess)
 
