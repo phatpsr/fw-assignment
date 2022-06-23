@@ -1,7 +1,5 @@
 *** Settings ***
 Documentation     Users can login using account signup with the google-account
-...               Sometime Google is required multi-factor authentication
-...               So, we cannot use automated test here
 Resource         ../resources/keyword.resource
 Resource         ../resources/variable.resource
 Test Teardown   I Teardown
